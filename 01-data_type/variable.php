@@ -62,3 +62,9 @@
  *      可变变量是一种独特的变量，它允许动态改变一个变量名称。
  *      其工作原理是该变量的名称由另外一个变量的值来确定，实现过程就是在变量的前面再多加一个美元符号"$".
  */
+    $change_name = "trans";
+    $trans = "You can see me!";
+    echo $change_name;
+    echo "<br>";
+    echo $$change_name;
+
