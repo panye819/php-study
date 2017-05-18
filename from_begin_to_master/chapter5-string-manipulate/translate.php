@@ -113,4 +113,30 @@
 //     $str67 = "在职硕士";
      $str67 = "硕士";
 
-     echo str_ireplace($str67,"<font color='#FF0000'>".$str67."</font>",$str66);
+     echo str_ireplace($str67,"<font color='#FF0000'>".$str67."</font>",$str66)."<BR>";
+
+     //格式化字符串
+     //number_format()函数
+     $num_1 = 1868.96907907907;
+     echo number_format($num_1)."<BR>";
+     echo number_format($num_1,2)."<BR>";
+     echo number_format($num_1,2,'.','.')."<BR>";
+
+     //分割字符串
+    //explode()函数按照指定的规则对一个字符串进行分割，返回值为数组。
+    $str_1 = "PHP权威指南@JAVA权威指南@Python权威指南@Ruby权威指南";
+    $str_arr = explode('@',$str_1);
+    print_r($str_arr);
+    echo "<BR>";
+    echo $str_arr[0]."<BR>";
+    echo $str_arr[1]."<BR>";
+    echo $str_arr[2]."<BR>";
+    echo $str_arr[3]."<BR>";
+
+    //合成字符串
+    //implode()函数可以将数组的内容组合成一个新的字符串。
+    $str_arr_2 = implode("*",$str_arr);
+    echo $str_arr_2;
+
+
+
