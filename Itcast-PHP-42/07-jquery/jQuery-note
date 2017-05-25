@@ -8,5 +8,10 @@ jQuery代码：无需考虑浏览器兼容问题、代码非常少
            $('tag 标签名称')------------->document.getElementByTagName(tag 标签)
            $('.class 属性值')------------->document.getElementByName(name 属性值)
 
+
+
+
+
+
  
  
