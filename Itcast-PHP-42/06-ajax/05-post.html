@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <script type="text/javascript">
+        function checkname(){
+            //ajax校验用户名
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4){
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.open('post','./05.php?height=165');
+            //post请求需要把数据组织为xml格式
+            //以下方法必须要在"open"方法后进行设置
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+            //获得输入的用户名，并传递个服务器端
+            var ming = document.getElementById('username').value;
+            //对ming变量的特殊符号信息进行编码
+            ming = encodeURIComponent(ming);
+            //把传递的参数变为"请求字符串"传递给send方法
+            var info = "nm="+ming+"&age=20";
+
+            xhr.send(info);
+        }
+    </script>
+</head>
+<body>
+<h2>ajax之post形式请求</h2>
+<p>用户名：<input type="text" id="username" onblur="checkname()" /></p>
+<p>密码：<input type="password" id="userpwd"  /></p>
+<div id="result"></div>
+</body>
+</html>
