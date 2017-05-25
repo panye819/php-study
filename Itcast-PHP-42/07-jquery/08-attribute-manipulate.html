@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+        console.log($('input:first').attr('type'));
+        console.log($('input:first').attr('class'));
+        console.log($('input:first').attr('name'));
+        console.log($('input:first').attr('id'));
+        console.log($('input:first').attr('value'));
+        console.log($('input:first').attr('address'));
+        }
+
+        function f2() {
+            //修改属性值
+            $('input:first').attr('class','banana');
+            $('input:first').attr('id','usermail');
+            $('input:first').attr('name','usermail');
+            $('input:first').attr('value','jim@gmail.com');
+            $('input:first').attr('address','nanjing');
+        }
+        function f3() {
+            //修改属性值
+            $('input:first').removeAttr('class');
+            $('input:first').removeAttr('id');
+            $('input:first').removeAttr('name');
+            $('input:first').removeAttr('value');
+            $('input:first').removeAttr('address');
+        }
+        function f4() {
+            var jn = {class:'pear',id:'userqq',name:'userqq',value:'11111111',address:'Shanghai'};
+            $('input:first').attr(jn);
+        }
+        function f5() {
+            //函数return返回值进行赋值操作
+            $('input:first').attr('value',function () {
+                //xxxxxxx其他函数体代码
+                return 13+19;
+            })
+        }
+
+    </script>
+</head>
+<body>
+
+    <h2>属性操作</h2>
+    <p><input type="text" class="apple" id="username"  name="username" value="tom" address="beijing"></p>
+    <p><input type="button" value="获取" onclick="f1()"></p>
+    <p><input type="button" value="修改" onclick="f2()"></p>
+    <p><input type="button" value="删除" onclick="f3()"></p>
+    <p><input type="button" value="批量修改" onclick="f4()"></p>
+    <p><input type="button" value="修改(function)" onclick="f5()"></p>
+</body>
+</html>

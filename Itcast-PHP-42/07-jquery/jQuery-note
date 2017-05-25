@@ -1,0 +1,12 @@
+jQuery是对JavaScript封装的一个框架包，简化了对JavaScript的操作
+JavaScript代码：DOM获得页面节点对象、ajax操作、时间操作、事件对象
+jQuery代码：无需考虑浏览器兼容问题、代码非常少
+ 
+   选择器：
+       1、基本选择器
+           $('#id 属性值')------------->document.getElementById()
+           $('tag 标签名称')------------->document.getElementByTagName(tag 标签)
+           $('.class 属性值')------------->document.getElementByName(name 属性值)
+
+ 
+ 

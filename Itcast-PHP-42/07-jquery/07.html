@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单域选中选择器</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+          console.log($('.hby:checked'));
+
+          console.log($('.sx:checked'));
+
+          console.log($('option:selected'));
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>表单域选中选择器</h2>
+    爱好(复选框):
+    <input type="checkbox" class="hby" name="hobby[]" value="1"/>篮球
+    <input type="checkbox" class="hby" name="hobby[]" value="2"/>足球
+    <input type="checkbox" class="hby" name="hobby[]" value="3"/>排球
+    <input type="checkbox" class="hby" name="hobby[]" value="4"/>棒球
+    <br>
+    性别(单选框):
+    <input type="radio" class="sx" name="sex" value="a"/>男
+    <input type="radio" class="sx" name="sex" value="b"/>女
+    <input type="radio" class="sx" name="sex" value="c"/>保密
+    <br>
+    学历(下拉列表):
+    <select>
+        <option value="0">请选择</option>
+        <option value="1">小学</option>
+        <option value="2">中学</option>
+        <option value="3">大学</option>
+    </select>
+    <br>
+
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

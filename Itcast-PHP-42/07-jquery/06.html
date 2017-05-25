@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容过滤选择器</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+           $('div:contains("beijing")').css('color','green');
+
+           alert($('div:empty'));
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>内容过滤选择器</h2>
+    <h3>内容过滤选择器</h3>
+    <h4 class="apple">内容过滤选择器</h4>
+    <h5 class="apple">内容过滤选择器</h5>
+    <div>linken like newYork</div>
+    <div>xiaoming like beijing</div>
+    <div><img/></div>
+
+    <div>      </div>
+    <div><p class="apple"></p></div>
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

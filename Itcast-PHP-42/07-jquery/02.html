@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //获得页面各种元素节点
+/*            $('#usermail').css('color','red');
+
+            $('h2').css('backgroundColor','pink');
+
+            $('input').css('backgroundColor','green');
+
+            $('.pear').css('fontSize','30px');*/
+
+            //通配符选择器
+//            $('*').css('fontSize','30px');
+
+            //联合选择器
+            $('#username,.pear,h2').css('color','yellow');
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>jQuery基本选择器</h2>
+    <p><input type="text" id="username" value="linken"></p>
+    <p><input type="text" id="usermail" class="apple" value="linken@163.com"></p>
+    <p><input type="text" id="userqq" class="pear" value="12345678"></p>
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

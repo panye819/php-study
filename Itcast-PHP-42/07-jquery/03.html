@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层次选择器</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+           //$(s1 s2) 派生选择器：在s1内部获得全部的s2节点（不考虑层次）
+            $('div span').css('color','blue');
+           //$(s1 > s2) 直接子元素选择器：在s1内部获得全部的s2节点（考虑层次）
+            $('div > span').css('background-color','lightblue');
+           //$(s1 + s2) 直接兄弟元素选择器：在s1后面获得紧紧挨着的第一个兄弟关系的子s2节点
+            $('div + span').css('font-size','30px');
+           //$(s1 ~ s2) 后续全部兄弟元素选择器：在s1后面获得全部兄弟关系的子s2节点
+            $('div ~ span').css('color','green');
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>jQuery层次选择器(思想来自CSS样式选择器)</h2>
+    <span>董卓</span>
+    <div>
+        <span>刘备</span>
+        <p>
+            <span>阿斗</span>
+        </p>
+        <span>张飞</span>
+    </div>
+    <p>貂蝉</p>
+    <span>吕布</span>
+    <br>
+    <span>曹操</span>
+    <p>貂蝉</p>
+    <span>孙权</span>
+
+    <div></div>
+    <span>黄盖</span>
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

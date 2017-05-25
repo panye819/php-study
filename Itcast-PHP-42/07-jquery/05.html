@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并且（过滤）选择器复杂用法</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //复杂用法
+            /*
+            * 并且选择器可以单独使用
+            * 各种选择器都可以构成“并且”关系
+            * 并且关系的选择器可以使用多个，每个选择器使用前，已经获得节点的小标要归零处理
+            * 多个并且关系的选择器没有前后顺序要求，但是要避免歧义。
+            * */
+
+            $('li:gt(2):lt(4)').css('color','red');
+
+            $('li.apple').css('color','green');
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>jQuery并且选择器2</h2>
+    <h3>jQuery并且选择器3</h3>
+    <h4 class="apple">jQuery并且选择器4</h4>
+    <h5 class="apple">jQuery并且选择器5</h5>
+    <ul>
+        <li>刘备</li>
+        <li>张飞</li>
+        <li>关羽</li>
+        <li id="yun">赵云</li>
+
+        <li class="apple">孙权</li>
+        <li class="apple">周瑜</li>
+        <li>黄盖</li>
+        <li>大乔</li>
+    </ul>
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

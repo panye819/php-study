@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+    function f1() {
+//        document.getElementsByTagName('h2')[0].style.backgroundColor = "red";
+        //jQuery实现上述效果
+//        $('h2').css('backgroundColor','red');
+
+        //通过jQuery实现ajax请求
+//        $.get('./01.php');
+        $.get('./01.php',function (msg) {
+            //msg泛指服务器回来的信息
+            alert(msg);
+        })
+
+
+    }
+//    $('h2').css('backgroundColor','red');
+
+
+    </script>
 </head>
 <body>
-
+    <h2>jQuery简单使用</h2>
+    <input type="button" value="触发" onclick="f1()">
 </body>
 </html>

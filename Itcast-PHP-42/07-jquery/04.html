@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并且（过滤）选择器</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            $('li').css('font-size','30px');
+            //获取第一个目标
+            $('li:first').css('color','red');
+            //获取最后一个目标
+            $('li:last').css('color','lightblue');
+
+            $('li:eq(3)').css('background-color','green');
+            $('li:eq(6)').css('background-color','green');
+            $('li:gt(4)').css('font-size','10px');
+            $('li:lt(3)').css('font-size','20px');
+
+            $('li:even').css('background-color','purple');
+            $('li:odd').css('background-color','lightblue');
+
+            //获得所有的标题标签节点
+            $(':header').css('font-size','40px');
+
+            $('li:not(#yun)').css('color','red');
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h2>jQuery并且选择器2</h2>
+    <h3>jQuery并且选择器3</h3>
+    <h4>jQuery并且选择器4</h4>
+    <ul>
+        <li>刘备</li>
+        <li>张飞</li>
+        <li>关羽</li>
+        <li id="yun">赵云</li>
+
+        <li>孙权</li>
+        <li>周瑜</li>
+        <li>黄盖</li>
+        <li>大乔</li>
+    </ul>
+    <p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>
