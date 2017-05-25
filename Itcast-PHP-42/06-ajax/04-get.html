@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-get</title>
+    <script>
+        function checkname() {
+            //ajax校验用户名
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4){
+//                    console.log(xhr.responseText);
+                   document.getElementById('result').innerHTML = xhr.responseText;
+
+                }
+            };
+
+            //获得输入的用户名，并传递给服务器端。
+            var ming = document.getElementById('username').value;
+
+            //对ming变量的特殊符号进行编码
+            ming = encodeURIComponent(ming);
+            //ajax的get形式请求以字符串的形式提交
+            xhr.open('get','./04.php?nm='+ming+'&age=23');
+            //传递的信息内部有&、=等特殊符号时，结果变成请求字符串的连接符号了。
+            //&、=符号在浏览器地址内部产生歧义了，为了避免传递的特殊符号产生歧义，需要对其进行编码处理
+            //PHP中：urlencode(),urldecode()
+            //JS中：encodeURIComponent()对特殊符号进行编码。
+            xhr.send(null);
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>ajax之get形式请求</h2>
+    <p>用户名：<input type="text" id="username" onblur="checkname()"/></p>
+    <p>密码：<input type="password" id="userpwd"/></p>
+    <div id="result"></div>
+</body>
+</html>
