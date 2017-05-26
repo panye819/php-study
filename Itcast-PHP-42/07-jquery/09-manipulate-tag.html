@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //html()方法可以获取字符串和HTML标签内容
+            //text()方法可以获取字符串内容
+         console.log($('div').html());
+         console.log($('div').text());
+        }
+        function f2() {
+            $('div').html('欢迎访问<a href="http://itcast.com">weather</a>is very good!');
+//            $('div').text('欢迎访问<a href="http://itcast.com">weather</a>is very good!');
+
+        }
+
+    </script>
+    <style type="text/css">
+        .apple{width: 300px;height: 200px;background-color: pink}
+        .pear{font-size: 35px}
+        .orange{color: red}
+    </style>
+</head>
+<body>
+
+    <h2>标签包含内容操作</h2>
+    <div>Today is <span>Wednesday</span></div>
+    <p>
+        <input type="button"  value="获取" onclick="f1()" />
+        <input type="button"  value="设置" onclick="f2()" />
+    </p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //对div内部的class属性进行操作
+            //attr()方法针对同一属性多次赋值，后者覆盖前者
+            $('div').attr('class','apple');
+            $('div').attr('class','pear');
+            $('div').attr('class','orange');
+            //addclass()给class属性“追加”信息值
+            $('div').addClass('apple');
+            $('div').addClass('pear');
+            $('div').addClass('orange');
+
+        }
+        function f2() {
+            //删除class属性值中的信息值
+//            $('div').removeClass('pear');
+            //删除class属性
+            $('div').removeAttr('class');
+        }
+        function f3() {
+            //开关效果，有则删除，无则添加
+            $('div').toggleClass('orange');
+        }
+
+    </script>
+    <style type="text/css">
+        .apple{width: 300px;height: 200px;background-color: pink}
+        .pear{font-size: 35px}
+        .orange{color: red}
+    </style>
+</head>
+<body>
+
+    <h2>class属性操作</h2>
+    <div>Today is Wednesday</div>
+    <p><input type="button"  value="设置" onclick="f1()" /></p>
+    <p><input type="button"  value="删除" onclick="f2()" /></p>
+    <p><input type="button"  value="开关" onclick="f3()" /></p>
+</body>
+</html>
