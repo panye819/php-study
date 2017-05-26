@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点复制</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+</head>
+<body>
+    <h2>文档操作案例效果</h2>
+    <form method="post" action="">
+        <p>用户名:<input type="text" id="username"/></p>
+        <p>密码:<input type="password" id="user_pwd"/></p>
+        <p>邮箱:<input type="text" id="user_mail"/></p>
+        <p id="pic">头像:<input type="file" id="user_pic"/>
+                <input type="button" value="增加" onclick="addFile()">
+        </p>
+        <p><input type="submit" value="注册"/></p>
+    </form>
+    <p>
+        <input type="button" value="复制" onclick="f1()">
+    </p>
+</body>
+</html>
+<script type="text/javascript">
+    /*
+     * 页面加载完毕就给shu的无序列表设置事件
+     * */
+    //制作一个计数器，用于计算当前增加的头像个数
+    var num = 0;
+
+    function addFile() {
+        $('#pic').append('<p id="pic'+num+'">头像:<input type="file" id="user_pic'+num+'" /><input type="button" value="删除"  onclick="delFile('+num+')"/></p>');
+        num++;
+    }
+    function delFile(n) {
+        //删除增加后的头像
+        $('#pic'+n).remove();
+
+    }
+</script>

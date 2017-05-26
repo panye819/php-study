@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点复制</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        /*
+        * 页面加载完毕就给shu的无序列表设置事件
+        * */
+        $().ready(function () {
+            $('#shu li').mousemove(function () {
+                $(this).css('background-color','lightgray');
+            })
+            $('#shu li').mouseout(function () {
+                $(this).css('background-color','');
+            })
+        })
+
+        function f1() {
+//            var fu_yu = $('#yu').clone(true);//节点和事件都复制
+            var fu_yu = $('#yu').clone(false);//仅复制节点
+            $('#wu').append(fu_yu);
+        }
+    </script>
+
+</head>
+<body>
+    <h2>节点复制</h2>
+    <ul id="shu">
+        <li id="bei">刘备</li>
+        <li id="yu">关羽</li>
+        <li>张飞</li>
+    </ul>
+    <ul id="wu">
+        <li>孙权</li>
+        <li>周瑜</li>
+        <li id="gai">黄盖</li>
+    </ul>
+    <p>
+        <input type="button" value="复制" onclick="f1()">
+        <input type="button" value="删除" onclick="f2()">
+    </p>
+</body>
+</html>
