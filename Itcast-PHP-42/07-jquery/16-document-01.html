@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作文档</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        /*
+        *节点追加：
+        *  1、 父子关系节点追加
+        * */
+        function f1() {
+            //给shu追加节点
+            //主动追加
+            //后置
+            $('#shu').append("<li>马超</li>");
+            //前置
+            $('#shu').prepend("<li>赵云</li>");
+
+            //被动追加
+            //后置
+            $('<li>黄忠</li>').appendTo($('#shu'));
+            //前置
+            $('<li>魏延</li>').prependTo($('#shu'));
+
+            //页面已有节点也可以追加，被追加节点要发生物理位置移动现象
+            $('#shu').append($('#gai'));
+            //
+//            $('#wu li:first').appendTo($('#shu'));
+            $('#wu li:first').prependTo($('#shu'));
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <h2>节点追加(父子)</h2>
+    <ul id="shu">
+        <li>刘备</li>
+        <li>关羽</li>
+        <li>张飞</li>
+    </ul>
+    <ul id="wu">
+        <li>孙权</li>
+        <li>周瑜</li>
+        <li id="gai">黄盖</li>
+    </ul>
+    <p>
+        <input type="button" value="追加" onclick="f1()">
+    </p>
+</body>
+</html>

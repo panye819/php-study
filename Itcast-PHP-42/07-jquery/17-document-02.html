@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作文档</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        /*
+        *节点追加：
+        *  1、 兄弟关系节点追加
+        * */
+        function f1() {
+            //主动
+            //after()   后置
+            $('#bei').after("<li>诸葛亮</li>");
+            //前置
+            $('#bei').before("<li>赵云</li>");
+
+            //被动
+            //insertAfter() 后置
+            $('<li>魏延</li>').insertAfter($('#yu'));
+            //insertBefore() 前置
+            $('<li>黄盖</li>').insertBefore($('#yu'));
+
+            //已有节点
+            $('#wu li:last').insertAfter($('#yu'));
+            $('#wu li:first').insertAfter($('#bei'));
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <h2>节点追加(父子)</h2>
+    <ul id="shu">
+        <li id="bei">刘备</li>
+        <li id="yu">关羽</li>
+        <li>张飞</li>
+    </ul>
+    <ul id="wu">
+        <li>孙权</li>
+        <li>周瑜</li>
+        <li id="gai">黄盖</li>
+    </ul>
+    <p>
+        <input type="button" value="追加" onclick="f1()">
+    </p>
+</body>
+</html>

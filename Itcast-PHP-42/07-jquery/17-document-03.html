@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点替换</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        /*
+        *节点替换：
+        * */
+        function f1() {
+            $('#yu').replaceWith($('<li>马超</li>'));
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <h2>节点替换</h2>
+    <ul id="shu">
+        <li id="bei">刘备</li>
+        <li id="yu">关羽</li>
+        <li>张飞</li>
+    </ul>
+    <ul id="wu">
+        <li>孙权</li>
+        <li>周瑜</li>
+        <li id="gai">黄盖</li>
+    </ul>
+    <p>
+        <input type="button" value="替换" onclick="f1()">
+    </p>
+</body>
+</html>
