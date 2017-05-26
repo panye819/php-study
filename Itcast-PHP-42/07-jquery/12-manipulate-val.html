@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式操作</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //获取样式信息
+//         console.log($('.hby:checked'));
+            var s =""
+         for(var i=0;i<$('.hby:checked').length;i++){
+//             console.log($('.hby:checked:eq('+i+')').val());//+i+表示用空白字符串连接变量i，使其变成变量
+             s += $('.hby:checked:eq('+i+')').val()+",";
+         }
+        //去掉最后的逗号
+        s = s.substr(0,s.length-1);
+         console.log(s);
+
+        }
+
+        function f2() {
+
+
+        }
+
+    </script>
+    <link href="11.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+       div{color: green;border: 5px solid blue}
+    </style>
+</head>
+<body>
+<h2>表单域选中选择器</h2>
+        爱好(复选框):
+        <input type="checkbox" class="hby" name="hobby[]" value="1"/>篮球
+        <input type="checkbox" class="hby" name="hobby[]" value="2"/>足球
+        <input type="checkbox" class="hby" name="hobby[]" value="3"/>排球
+        <input type="checkbox" class="hby" name="hobby[]" value="4"/>棒球
+        <br>
+
+<p><input type="button" value="触发" onclick="f1()"></p>
+</body>
+</html>

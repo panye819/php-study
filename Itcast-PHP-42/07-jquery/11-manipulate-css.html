@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式操作</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        function f1() {
+            //获取样式信息
+         console.log($('div').css('width'));
+         console.log($('div').css('height'));
+         console.log($('div').css('background-color'));
+         //获取内部样式
+         console.log($('div').css('color'));
+         //获取外部样式
+         console.log($('div').css('font-size'));
+         //
+         console.log($('div').css('border'));
+
+
+        }
+        function f2() {
+
+
+        }
+
+    </script>
+    <link href="11.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+       div{color: green;border: 5px solid blue}
+    </style>
+</head>
+<body>
+
+    <h2>标签包含内容操作</h2>
+    <div style="width: 300px;height: 200px;background-color: lightblue">Today is Wednesday</div>
+    <p>
+        <input type="button"  value="获取" onclick="f1()" />
+        <input type="button"  value="设置" onclick="f2()" />
+    </p>
+</body>
+</html>

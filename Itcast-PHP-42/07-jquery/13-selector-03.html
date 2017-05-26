@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框全选、全不选、反选</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        function select_all() {
+            $('.hby').attr('checked',true);
+
+        }
+        function select_none() {
+            $('.hby').attr('checked',false);
+        }
+        function select_opp() {
+            //遍历每个复选框，并查看状态，选中就取消，未选中就设置
+//            $('.hby');
+            for(var i=0;i<$('.hby').length;i++){
+                var flag = $('.hby:eq('+i+')').attr('checked');
+                $('.hby:eq('+i+')').attr('checked',!flag);
+            }
+
+        }
+
+    </script>
+    <link href="11.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+       div{color: green;border: 5px solid blue}
+    </style>
+</head>
+<body>
+<h2>表单域选中选择器</h2>
+        爱好(复选框):
+        <input type="checkbox" class="hby" name="hobby[]" value="1"/>篮球
+        <input type="checkbox" class="hby" name="hobby[]" value="2"/>足球
+        <input type="checkbox" class="hby" name="hobby[]" value="3"/>排球
+        <input type="checkbox" class="hby" name="hobby[]" value="4"/>棒球
+        <br>
+
+<p><input type="button" value="全选" onclick="select_all()"></p>
+<p><input type="button" value="全不选" onclick="select_none()"></p>
+<p><input type="button" value="反选" onclick="select_opp()"></p>
+</body>
+</html>
