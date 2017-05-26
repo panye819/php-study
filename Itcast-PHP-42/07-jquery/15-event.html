@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载事件</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        /*
+        *  1、 设置个数不同
+        *       jQuery方式加载事件是把每个加载事件都存入到一个数组中称为数组元素，执行的时候就遍历该数组执行每个元素即可。
+        *       因此可以设置成多个加载事件
+        *       传统方式加载事件是给onload事件属性赋值，后者会覆盖前者。
+        *  2、 加载时机不一样：
+        *       传统方式加载事件，是全部内容在浏览器显示完毕再执行加载事件
+        *       jQuery方式加载事件，只要全部内容在内存里面对应的DOM树结构回执完毕就执行，有可能对应的内容在浏览器里面还没有显示。
+        * */
+        //$(document).ready(function处理);
+        $(document).ready(function () {
+            document.getElementsByTagName('h2')[0].onmouseover =function () {
+                this.style.backgroundColor = "gray";
+            }
+        });
+
+        //$().ready(function处理);
+        $().ready(function () {
+            document.getElementsByTagName('h2')[0].onmouseout = function () {
+                this.style.backgroundColor= "";
+            }
+        });
+
+        //$(function处理);
+        $(function () {
+            console.log('Ok! I see you!!');
+        });
+
+    </script>
+
+</head>
+<body>
+    <h2>jQuery加载事件</h2>
+    <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>广州</li>
+
+
+    </ul>
+</body>
+</html>

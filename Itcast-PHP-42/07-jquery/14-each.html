@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each遍历</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        var color = ['red','blue','green'];
+        $.each(color,function (k,v) {
+            console.log(k+'---'+v);
+        })
+
+        var cat = {color:'gray',name:'波斯猫',climb:function () {
+            '在爬树'
+        }};
+        $.each(cat,function (m,n) {
+            console.log(m+'===='+n);
+        })
+
+        //jquery对象遍历
+        window.onload = function () {
+            $('li').each(function (i,y) {
+                console.log(i+'---'+y);
+                y.style.color = "blue";
+                $(y).css('background-color','lightblue');
+
+                //this：代表每个li的DOM对象
+                //大部分情况下，jQuery内部的this都代表DOM对象
+                $(this).css('font-size','30px');
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <h2></h2>
+    <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>广州</li>
+
+
+    </ul>
+</body>
+</html>
