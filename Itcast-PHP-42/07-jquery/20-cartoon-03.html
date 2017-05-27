@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>颜色渐变动画效果</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        //隐藏
+        function f1() {
+            $('div').fadeOut(3000,function () {
+                alert('我消失了！！');
+            });
+        }
+        //显示
+        function f2() {
+
+            $('div').fadeIn(3000,function () {
+                alert('我又回来了');
+            });
+        }
+        function f3() {
+            $('div').fadeToggle(3000);
+        }
+
+//        $(function () {
+//            setInterval('f3()',3000);
+//        })
+    </script>
+    <style type="text/css">
+        div {width: 300px;height: 200px;background-color: green}
+
+    </style>
+</head>
+<body>
+    <h2>渐变动画效果</h2>
+        <div>Today is Saturday!</div>
+        <input type="button" value="隐藏" onclick="f1()">
+        <input type="button" value="显示" onclick="f2()">
+        <input type="button" value="开关切换" onclick="f3()">
+</body>
+</html>

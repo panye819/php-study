@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+      function f1() {
+          //1、name
+          $('[value]').css('backgroundColor','pink');
+
+          //2、[name=value]
+          $('[type=password]').css('width','300px');
+
+          //3、[name ^=value]
+          $('[id^=user]').css('backgroundColor','lightblue');
+
+          //4、[name$=value]
+          $('[type$=on]').css('font-size','30px');
+
+          //5、[name*=value]
+
+          $('[class*=p]').css('backgroundColor','red');
+
+          //6、[name!=value]
+          $('[class!=apple]').css('background-color','gray');
+          //$(s1,s2,s3) 联合选择器，满足其中一个条件即可
+          //$(s1s2s3)   并且选择器，所有条件必须同时满足
+
+      }
+    </script>
+</head>
+<body>
+    <h2>文档操作案例效果</h2>
+    <form method="post" action="">
+        <p>用户名:<input type="text" class="pear" id="username"/></p>
+        <p>密码:<input type="password" class="apple" id="user_pwd"/></p>
+        <p>邮箱:<input type="text" class="orange" id="user_mail"/></p>
+        <p>QQ:<input type="text" id="tencent_qq" class="banana" value="lincoln@163.com"/></p>
+    </form>
+    <p>
+        <input type="button" value="触发" onclick="f1()">
+    </p>
+</body>
+</html>

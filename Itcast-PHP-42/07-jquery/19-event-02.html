@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+      $(function () {
+          //$().bind(事件类型,function(){})
+          $('div').bind('click',function () {
+//              console.log(this);
+              $(this).css('font-size','40px');
+          })
+          function changeColor() {
+                $(this).css('color','red');
+          }
+          $('div').bind('click', changeColor);//函数没有括号，是把函数的名字拿过来使用，非函数调用
+      })
+    </script>
+    <style type="text/css">
+        div {width: 300px;height: 200px;background-color: pink}
+
+    </style>
+</head>
+<body>
+    <h2>事件绑定(简单设置)</h2>
+        <div>Today is Saturday!</div>
+        <input type="button" value="触发" onclick="f1()">
+</body>
+</html>

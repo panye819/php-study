@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定(多个不同类型事件绑定一个处理函数)</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+      $(function () {
+          //$().bind(事件类型,function(){})
+          //事件之间通过“一个空格”区别
+          $('div').bind({
+              'click': function () {
+                  $(this).css('font-size', '40px')
+              },
+              'mouseover': function () {
+                  $(this).css('background-color', 'lightgreen')
+              },
+              'mouseout': function () {
+                  $(this).css('background-color', 'pink')
+              }
+          });
+
+          $('div').bind('click',f1);
+          $('div').bind('click',f2);
+          $('div').bind('click',f3);
+          $('div').bind('click',f4);
+      });
+      function f1() {
+          console.log(111);
+      }
+      function f2() {
+          console.log(222);
+      }
+      function f3() {
+          console.log(333);
+      }
+      function f4() {
+          console.log(444);
+      }
+      function cancel() {
+//          $('div').unbind();//取消全部事件（无视事件类型，无视处理函数类型）
+//          $('div').unbind('click');//取消全部的click事件，无视处理函数类型
+          $('div').unbind('click',f2);//取消指定类型事件，指定处理函数
+      }
+    </script>
+    <style type="text/css">
+        div {width: 300px;height: 200px;background-color: pink}
+
+    </style>
+</head>
+<body>
+    <h2>事件绑定(json对象，批量事件设置)</h2>
+        <div>Today is Saturday!</div>
+        <input type="button" value="取消事件" onclick="cancel()">
+</body>
+</html>
