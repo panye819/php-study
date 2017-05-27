@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>jQuery插件简单使用</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script>
+        /*
+        * jquery框架本身给我们提供了一些方法供使用，但是方法的数目是有限的，不能满足我们所有的需求。
+        * 这时我们可以自己开发插件
+        *
+        *
+        *
+        * */
+        function f1() {
+            //jQuery.fn.extend
+
+
+            //给jQuery增加一个方法，名称为‘hello’
+            //1、拷贝继承一个额外方法
+            jQuery.fn.extend({hello:function () {
+                alert('i am hello!')
+            }})
+            $('h2').hello();
+            //2、直接给fn丰富一个成员
+            $.fn.abc = function () {
+                alert(456)
+            }
+            $('h2').abc();
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>jQuery插件简单使用</h2>
+    <input type="button" value="触发" onclick="f1()">
+</body>
+</html>
