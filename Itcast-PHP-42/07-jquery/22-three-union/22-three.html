@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动</title>
+    <script type="text/javascript" src="../jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        //默认显示全部省份信息
+        function showProvince() {
+            //ajax去服务器端
+            $.ajax({
+                url:'./ChinaArea.xml',
+                dataType:'xml',
+                type:'get',
+                success:function (msg) {
+                    //从xml中解析省份信息并显示
+                    //jQuery解析xml与解析HTML方式是一样的
+//                    alert(msg);
+                    //将值赋予全局变量
+                    xmlDom = msg;
+                    //从msg中获得province元素信息，非当前页面
+                    //返回jQuery对象，内部有34个省份的DOM对象
+//                   console.log($(msg).find('province'));
+                   //遍历所有省份的jQuery对象
+                    $(msg).find('province').each(function (k,v) {
+                        //this代表每个province的DOM对象
+                        //获得province的省份名称信息
+                        var nm = $(this).attr('province');
+                        var id = $(this).attr('provinceID');
+//                        console.log(nm);
+                        $('#shengfen').append("<option value='"+id+"'>"+nm+"</option>");
+                    })
+                }
+            });
+        }
+        //页面加载完毕就获取省份并显示
+        $(function () {
+            showProvince();
+        })
+
+        var xmlDom = null;
+
+        function showCity() {
+            //通过省份显示对应的城市信息
+            //获得被选取省份的ID信息
+            var pid = $('#shengfen option:selected').val();
+//            console.log(pid);
+            //根据pid获得省份province的元素节点对象
+            //需要通过全部的XML信息，获得某个省份province的节点信息
+            var selpro = $(xmlDom).find("[provinceID="+pid+"]");
+//            console.log(selpro);
+            //从被选中的省份里面获得对应的city节点
+            //清除旧的城市信心
+            $('#chengshi').empty();
+//            console.log(selpro.find('city'));
+            selpro.find('City').each(function () {
+                var nm = $(this).attr('City');
+                var id = $(this).attr('CityID');
+                $('#chengshi').append("<option value='"+id+"'>"+nm+"</option>>");
+            })
+        }
+
+        function showregion() {
+            var pid = $('#chengshi option:selected').val();
+
+            var selcity = $(xmlDom).find("[CityID="+pid+"]");
+            $('#diqu').empty();
+            selcity.find('Piecearea').each(function () {
+                var nm = $(this).attr('Piecearea');
+                var id = $(this).attr('PieceareaID');
+                $('#diqu').append("<option value='"+id+"'>"+nm+"</option>");
+            })
+        }
+    </script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <h2>Ajax+jquery+xml实现地区三级联动</h2>
+    省份：<select id="shengfen" onchange="showCity()">
+        <option value="0">-请选择-</option>
+    </select>
+    城市：<select id="chengshi" onchange="showregion()">
+        <option value="1">-请选择-</option>
+    </select>
+    地区： <select id="diqu">
+        <option value="2">-请选择-</option>
+    </select>
+</body>
+</html>
