@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery封装的ajax</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+/*      $.get(url [,data] [,function(msg){}回调函数] [,dataType]);
+        data:给服务器传递的数据，请求字符串，json对象都可以设置
+
+        dataType 服务器返回的数据类型，html,text,xml,json*/
+        function f1() {
+//            $.get('./21.php');
+//            $.get('./21.php',{'name':'htc','price':3100});
+/*            $.get('./21.php',{'name':'htc','price':3100},function (msg) {
+                console.log(msg.city);
+                console.log(msg.temp);
+            },'json');*/
+            $.ajax({
+                url:'./21.php',
+                data:'name=tom&age=20',
+                dataType:'json',
+                type:'post',
+                success:function (msg) {
+                    console.log(msg.city);
+                    console.log(msg.temp);
+            }
+            });
+        }
+/*      $.get(url [,data] [,function(msg){}回调函数] [,dataType]);
+ data:给服务器传递的数据，请求字符串，json对象都可以设置
+
+ dataType 服务器返回的数据类型，html,text,xml,json*/
+
+
+/*     以上两种方法都是异步的，如果需要设置同步请求，就换其他方法：
+    $.get(url [,data] [,function(msg){}回调函数] [,dataType]);
+ data:给服务器传递的数据，请求字符串，json对象都可以设置
+
+ dataType 服务器返回的数据类型，html,text,xml,json*/
+    </script>
+
+</head>
+<body>
+    <h2>jQuery封装的ajax</h2>
+        <input type="button" value="触发" onclick="f1()">
+
+</body>
+</html>

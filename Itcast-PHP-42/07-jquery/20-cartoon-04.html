@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>颜色渐变动画效果</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        //隐藏
+        function f1() {
+            $('#two').fadeTo(3000,0.3);
+            $('#one').fadeTo(3000,0.5);
+        }
+    </script>
+    <style type="text/css">
+        #one {width: 300px;height: 200px;background-color: green;
+            font-weight: bold;font-size: 30px;
+        }
+        #two {width: 300px;height: 200px;background-color: blue;
+                position: absolute;left: 50px;top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>渐变动画效果</h2>
+        <div id="one">Today is Saturday!</div>
+        <div id="two">Tomorrow is Sunday!</div>
+        <input type="button" value="透明度设置" onclick="f1()">
+
+</body>
+</html>
