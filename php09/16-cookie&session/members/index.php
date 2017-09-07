@@ -20,7 +20,7 @@
     session_start();
     if (isset($_SESSION['userid'])){
 //        echo $_SESSION['username'].', 欢迎回来！！<a href="#">注销</a>';
-        echo $_SESSION['username'].', 欢迎回来！！<a href="#">注销</a>';
+        echo $_SESSION['username'].', 欢迎回来！！<a href="./logout.php">注销</a>';
     }else{
      ?>
         <nav>
