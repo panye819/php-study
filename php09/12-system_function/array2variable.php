@@ -19,7 +19,10 @@ extract($arr1);
 extract($_GET);
 echo $a;
 echo '<hr/>';
-
+var_dump($_GET);
+echo '<hr/>';
+echo "id: ".$id;
+echo '<hr/>';
 
 //用给的的变量名创建一个数组,变量名是键名，变量值是值
 $h=12;
